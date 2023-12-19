@@ -29,13 +29,13 @@ export default function InsertDataForm({
 }: Props) {
   return (
     <>
-      <div className="w-[75%] flex justify-start">
+      <div className="w-full xl:w-[75%] flex justify-start">
         <h2 className="text-xl font-semibold text-white">
           Tambah Data Dosen / Mahasiswa
         </h2>
       </div>
       <form
-        className="w-[75%] flex gap-5 flex-col md:flex-row pt-5"
+        className="w-full xl:w-[75%] flex gap-5 flex-col md:flex-row pt-5"
         onSubmit={handleSubmit}
       >
         <div className="w-full">

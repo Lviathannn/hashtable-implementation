@@ -24,7 +24,7 @@ export function TableComponent({
   };
 
   return (
-    <div className="w-[75%] pt-20">
+    <div className="w-full xl:w-[75%] pt-20">
       <Table className="text-white">
         {hashMap.size == 0 && (
           <TableCaption className="text-white text-lg">

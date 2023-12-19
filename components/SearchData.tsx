@@ -30,10 +30,13 @@ export default function SearchData({ hashMap }: Props) {
 
   return (
     <>
-      <div className="w-[75%] pt-10 flex justify-start">
+      <div className="w-full xl:w-[75%] pt-10 flex justify-start">
         <h2 className="text-white text-xl font-semibold ">Cari Data</h2>
       </div>
-      <form className="flex gap-5 w-[75%] pt-5" onSubmit={handleSubmit}>
+      <form
+        className="flex gap-5 w-full xl:w-[75%] pt-5"
+        onSubmit={handleSubmit}
+      >
         <Input
           placeholder="NIM / NIDN"
           className="!bg-black text-white"
