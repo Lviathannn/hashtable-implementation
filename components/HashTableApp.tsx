@@ -20,7 +20,6 @@ export default function HashTableApp({}: Props) {
     setName("");
     setStatus("Mahasiswa");
   };
-
   return (
     <div className=" flex justify-center flex-col items-center pt-10">
       <InsertDataForm
@@ -32,8 +31,8 @@ export default function HashTableApp({}: Props) {
         status={status}
         setStatus={setStatus}
       />
-      <SearchData />
-      <TableComponent hashMap={data} />
+      <SearchData hashMap={data} />
+      <TableComponent hashMap={data} setResult={setData} />
     </div>
   );
 }

@@ -1,17 +1,14 @@
-import { Trash } from "lucide-react";
-import { Button } from "./ui/button";
+type Props = {
+  result: { name: string; status: string };
+  keyword: string;
+};
 
-type Props = {};
-
-export default function SearchResult({}: Props) {
+export default function SearchResult({ result, keyword }: Props) {
   return (
     <div className="w-[75%] flex text-white justify-between mt-10 items-center">
-      <p>21110142</p>
-      <p>Muhammad Asrul</p>
-      <p>Mahasiswa</p>
-      <Button>
-        <Trash size={20} />
-      </Button>
+      <p>{keyword}</p>
+      <p>{result.name}</p>
+      <p>{result.status}</p>
     </div>
   );
 }

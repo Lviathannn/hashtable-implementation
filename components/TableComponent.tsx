@@ -7,8 +7,22 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Button } from "./ui/button";
+import { Trash2Icon } from "lucide-react";
 
-export function TableComponent({ hashMap }: { hashMap: Map<string, any> }) {
+export function TableComponent({
+  hashMap,
+  setResult,
+}: {
+  hashMap: Map<string, any>;
+  setResult: React.Dispatch<React.SetStateAction<any>>;
+}) {
+  const handleDelete = (keyword: string) => {
+    const newMap = new Map(hashMap);
+    newMap.delete(keyword);
+    setResult(newMap);
+  };
+
   return (
     <div className="w-[75%] pt-20">
       <Table className="text-white">
@@ -22,6 +36,7 @@ export function TableComponent({ hashMap }: { hashMap: Map<string, any> }) {
             <TableHead className="">NIM/NIDN</TableHead>
             <TableHead className="">Nama</TableHead>
             <TableHead className="">Status</TableHead>
+            <TableHead className="">Action</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody className="">
@@ -31,6 +46,17 @@ export function TableComponent({ hashMap }: { hashMap: Map<string, any> }) {
                 <TableCell className="font-medium ">{key}</TableCell>
                 <TableCell className="">{value.name} </TableCell>
                 <TableCell className="">{value.status}</TableCell>
+                <TableCell className="flex gap-3">
+                  <Button
+                    size="icon"
+                    className="!bg-red-600 !text-white"
+                    onClick={() => {
+                      handleDelete(key);
+                    }}
+                  >
+                    <Trash2Icon />
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
         </TableBody>
